@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Admin;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Model
 {
     use HasFactory, Notifiable;
 
@@ -45,16 +45,5 @@ class User extends Authenticatable
 
     public function roles(){
         return $this->belongsToMany(Role::class, 'user_roles');
-    }
-
-    public function isAdmin(){
-        return $this->roles()->where('name', 'admin')->exists();
-    }
-
-    public function isUser(){
-        $user = $this->roles()->where('name', 'user')->exists();
-        if ($user){
-            return "user";
-        }
     }
 }
