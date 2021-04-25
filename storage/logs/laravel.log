@@ -1,0 +1,9 @@
+[2021-04-24 19:51:43] local.ERROR: Command "ui" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"ui\" is not defined. at D:\\OpenServer\\domains\\systems.abbas.kz\\vendor\\symfony\\console\\Application.php:675)
+[stacktrace]
+#0 D:\\OpenServer\\domains\\systems.abbas.kz\\vendor\\symfony\\console\\Application.php(254): Symfony\\Component\\Console\\Application->find()
+#1 D:\\OpenServer\\domains\\systems.abbas.kz\\vendor\\symfony\\console\\Application.php(166): Symfony\\Component\\Console\\Application->doRun()
+#2 D:\\OpenServer\\domains\\systems.abbas.kz\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(92): Symfony\\Component\\Console\\Application->run()
+#3 D:\\OpenServer\\domains\\systems.abbas.kz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run()
+#4 D:\\OpenServer\\domains\\systems.abbas.kz\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
