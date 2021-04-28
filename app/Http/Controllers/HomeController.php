@@ -24,7 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        dd(Auth::user());
+        //dd(Auth::user()->isAdmin());
+        if (Auth::user()->isAdmin()){
+            return redirect()->route('abo.admin.index');
+        }elseif (Auth::user()->isOperator()){
+            return redirect()->route('abo.operator.index');
+        }
         return view('home');
     }
 }

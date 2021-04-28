@@ -48,13 +48,37 @@ class User extends Authenticatable
     }
 
     public function isAdmin(){
-        return $this->roles()->where('name', 'admin')->exists();
+        return $this->roles()->where('name', 'Admin')->exists();
     }
 
     public function isUser(){
-        $user = $this->roles()->where('name', 'user')->exists();
+        $user = $this->roles()->where('name', 'User')->exists();
         if ($user){
             return "user";
+        }
+    }
+    public function isOperator(){
+        $user = $this->roles()->where('name', 'Operator')->exists();
+        if ($user){
+            return "operator";
+        }
+    }
+    public function isModerator(){
+        $user = $this->roles()->where('name', 'Moderator')->exists();
+        if ($user){
+            return "moderator";
+        }
+    }
+    public function isCourier(){
+        $user = $this->roles()->where('name', 'Courier')->exists();
+        if ($user){
+            return "courier";
+        }
+    }
+    public function isStore(){
+        $user = $this->roles()->where('name', 'Store')->exists();
+        if ($user){
+            return "store";
         }
     }
 }

@@ -12,4 +12,8 @@ class AdminController extends BaseController
         $this->middleware('auth');
         $this->middleware('status');
     }
+
+    public function index(){
+        return view('admin.index');
+    }
 }
