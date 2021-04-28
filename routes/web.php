@@ -27,3 +27,4 @@ Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'
 
 /** =========== ADMIN SIDE ==================== */
 Route::get('/operator', [App\Http\Controllers\Operator\OperatorController::class, 'index'])->name('abo.operator.index');
+Route::get('/operator/order', [App\Http\Controllers\Operator\OrderController::class, 'addForm'])->name('abo.operator.order.addForm');
