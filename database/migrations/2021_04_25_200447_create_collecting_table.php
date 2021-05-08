@@ -14,7 +14,7 @@ class CreateCollectingTable extends Migration
     public function up()
     {
         Schema::create('collecting', function (Blueprint $table) {
-            $table->integer('id');
+            $table->id();
             $table->string('collecting_code');
         });
     }

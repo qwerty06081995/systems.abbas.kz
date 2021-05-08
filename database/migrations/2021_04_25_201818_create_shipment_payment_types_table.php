@@ -14,7 +14,7 @@ class CreateShipmentPaymentTypesTable extends Migration
     public function up()
     {
         Schema::create('shipment_payment_types', function (Blueprint $table) {
-            $table->integer('id');
+            $table->id();
             $table->string('name');
         });
     }

@@ -14,7 +14,7 @@ class CreateOverheadTable extends Migration
     public function up()
     {
         Schema::create('overhead', function (Blueprint $table) {
-            $table->integer('id');
+            $table->id();
             $table->string('overhead_code');
             $table->string('from_name');
             $table->string('from_company');

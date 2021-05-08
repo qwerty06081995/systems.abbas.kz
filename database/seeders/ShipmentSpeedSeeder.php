@@ -29,6 +29,6 @@ class ShipmentSpeedSeeder extends Seeder
             'name'=>'Авто'
         ];
 
-        DB::table('shipment_speed')->insert($data);
+        DB::table('shipment_speeds')->insert($data);
     }
 }

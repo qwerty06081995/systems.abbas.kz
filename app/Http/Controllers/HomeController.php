@@ -29,6 +29,10 @@ class HomeController extends Controller
             return redirect()->route('abo.admin.index');
         }elseif (Auth::user()->isOperator()){
             return redirect()->route('abo.operator.index');
+        }elseif (Auth::user()->isCourier()){
+            return redirect()->route('abo.courier.index');
+        }elseif(Auth::user()->isStore()){
+            return  redirect()->route('abo.store.index');
         }
         return view('home');
     }

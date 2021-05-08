@@ -28,6 +28,6 @@ class ShipmentPaymentSeeder extends Seeder
             'id'=>3,
             'name'=>'Третьей стороной'
         ];
-        DB::table('shipment_payment')->insert($data);
+        DB::table('shipment_payments')->insert($data);
     }
 }

@@ -24,7 +24,8 @@
         <section class="content">
             <div class="container-fluid">
                 <!-- form start -->
-                <form action="">
+                <form action="{{route('abo.operator.order.saveOrder')}}" method="get">
+
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="card card-primary">
@@ -114,20 +115,104 @@
                     <!-- /.row -->
 {{--        Order добавление            --}}
                     <div class="row">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-12">
                             <div class="card card-secondary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Тип отправление</h3>
+                                    <h3 class="card-title">Детали накладной</h3>
                                 </div>
                                 <div class="card-body">
-                                    <div class="form-group">
-                                        <div class="custom-control custom-radio">
-                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="customRadio4" name="customRadio2" checked="">
-                                            <label for="customRadio4" class="custom-control-label">Custom Radio with custom color</label>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Тип отправлений</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="type" value="1">
+                                                            <label class="form-check-label">Документы</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="type" value="2">
+                                                            <label class="form-check-label">Посылка</label>
+                                                        </div>
+{{--                                                        <div class="form-check">--}}
+{{--                                                            <input class="form-check-input" type="radio" name="radio1">--}}
+{{--                                                            <label class="form-check-label">Radio disabled</label>--}}
+{{--                                                        </div>--}}
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="custom-control custom-radio">
-                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="customRadio5" name="customRadio2">
-                                            <label for="customRadio5" class="custom-control-label">Custom Radio with custom color outline</label>
+                                        <div class="col-md-3">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Срочность</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="speed" value="1">
+                                                            <label class="form-check-label">Экспресс</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="speed" value="2">
+                                                            <label class="form-check-label">Стандарт</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="speed" value="3">
+                                                            <label class="form-check-label">Авто</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Оплата</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="payment" value="1">
+                                                            <label class="form-check-label">Отправителем</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="payment" value="2">
+                                                            <label class="form-check-label">Получателем</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="payment" value="3">
+                                                            <label class="form-check-label">Третьей стороной</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Способ оплаты</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="paymentType" value="1">
+                                                            <label class="form-check-label">По счету</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="paymentType" value="2">
+                                                            <label class="form-check-label">Наличными</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="paymentType" value="3">
+                                                            <label class="form-check-label">Терминалом</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -138,9 +223,39 @@
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
+                    <div class="row">
+                        <div class="col-12 col-md-12">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Дополнительно</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Примечания</label>
+                                                <textarea class="form-control" name="description" rows="3" placeholder="Введите примечания ..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Код заявки</label>
+                                                <input type="text" name="code" class="form-control" placeholder="Введите код ...">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" class="btn btn-success" value="Добавить">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </form>
             </div><!--/. container-fluid -->
         </section>
         <!-- /.content -->
     </div>
+
 @endsection
